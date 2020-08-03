@@ -4,14 +4,6 @@ import os
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-  return 'Server Works!'
-  
-@app.route('/greet')
-def say_hello():
-  return 'Hello from Server'
-
 def julian(year, month, day):
     a = (14 - month) / 12.0
     y = year + 4800 - a
@@ -20,7 +12,7 @@ def julian(year, month, day):
         day + (153 * m + 2) / 5.0 + (365 * y) + y / 4.0 - y / 100.0 + y / 400.0 - 32045
     )
 
-@app.route('/phase')
+@app.route('/phase/<int:year>/<int:month>/<int:day>')
 def phase(year=None, month=None, day=None):
     if year is None and month is None and day is None:
         today = dt.datetime.now()
