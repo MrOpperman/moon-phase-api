@@ -12,6 +12,9 @@ def julian(year, month, day):
         day + (153 * m + 2) / 5.0 + (365 * y) + y / 4.0 - y / 100.0 + y / 400.0 - 32045
     )
 
+@app.route('/phase')
+@app.route('/phase/<int:year>')
+@app.route('/phase/<int:year>/<int:month>')
 @app.route('/phase/<int:year>/<int:month>/<int:day>')
 def phase(year=None, month=None, day=None):
     if year is None and month is None and day is None:
