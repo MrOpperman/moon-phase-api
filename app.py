@@ -15,7 +15,7 @@ def julian(year, month, day):
 @app.route('/phase')
 @app.route('/phase/<int:year>/<int:month>/<int:day>')
 def phase(year=None, month=None, day=None):
-    if year is None and month is None and day is None:
+    if not all([year, month, day]) 
         today = dt.datetime.now()
         today -= dt.timedelta(days=1) # 2020 leap day correction
         year, month, day = today.year, today.month, today.day
