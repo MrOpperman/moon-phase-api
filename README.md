@@ -3,9 +3,9 @@ Moon phase API built with flask
 
 ## Setup
 
-1. `pip install Flask`
-2. `python3 -m venv venv`
-3. `source venv/bin/activate`
+1. `python3 -m venv venv`
+2. `source venv/bin/activate`
+3. `pip install`
 
 ## Run
 1. `flask run`
